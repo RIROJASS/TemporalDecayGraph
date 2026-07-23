@@ -1,11 +1,9 @@
 # TemporalDecayGraph
-Temporal decay graph project to interact with an EEG and increase efficiency of real-time data processing and display
 
-References:
-    https://ifelldh.tec.mx/sites/g/files/vgjovo1101/files/Muse_2_Specifications.pdf
-    https://www.epilepsy.com/diagnosis/eeg/how-read
-    https://www.geeksforgeeks.org/python/python-visualize-graphs-generated-in-networkx-using-matplotlib/
-    https://www.geeksforgeeks.org/python/regular-threads-vs-daemon-threads-in-python/
-    https://networkx.org/documentation/stable/reference/
-    https://matplotlib.org/stable/api/_as_gen/
-    
+A real-time EEG coherence graph where connections fade unless the brain keeps them alive. Electrode pairs are edges in a graph; each edge's weight (coherence across the Delta, Theta, Alpha, Beta, and Gamma bands) decays exponentially over time and is refreshed as new EEG data streams in. The result: a live head-map animation showing which brain regions are talking to each other *right now*, with stale connections dissolving on their own — no cleanup passes needed.
+
+## How It Works
+
+```mermaid
+flowchart TD
+    E[EEG stream<br/>21 electrodes, 10-20 system] --> I[TDG.in
